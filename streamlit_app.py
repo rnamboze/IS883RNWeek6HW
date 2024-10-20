@@ -1,7 +1,10 @@
 import streamlit as st
 from openai import OpenAI
 import os
-from transformers import pipeline
+from transformers import pipeline, set_seed
+
+BUID = 48882893
+set_seed(BUID)
 
 ### Load your API Key
 my_secret_key = st.secrets['MyOpenAIKey']
