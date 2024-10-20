@@ -12,10 +12,14 @@ os.environ["OPENAI_API_KEY"] = my_secret_key
 
 prompt = st.text_input("How may I help you today?", "Damascus is")
 
+generator = pipeline('text-generation', model='gpt2')
+set_seed(42)
+generator("Hello, I'm a language model,", max_length=30, num_return_sequences=5)
+
 ### OpenAI stuff
 client = OpenAI()
 response = client.chat.completions.create(
-  model="gpt-2",
+  model="gpt2",
   messages=[
     {"role": "system", "content": "Complete the following prefix"},
     {"role": "user", "content": prompt}
