@@ -10,14 +10,27 @@ set_seed(BUID)
 my_secret_key = st.secrets['MyOpenAIKey']
 os.environ["OPENAI_API_KEY"] = my_secret_key
 
-prompt = st.text_input("How may I help you today?")
-
-generator = pipeline('text-generation', model='gpt2')
-set_seed(42)
-generator("Hello, I'm a language model,", max_length=30, num_return_sequences=5)
-
-
 st.title("🤓My Amazing GPT2 App🤓")
-st.write(
-    "Let's start building! For help and inspiration, head over to [docs.streamlit.io](https://docs.streamlit.io/)."
+
+
+prompt = st.text_input("What is your prompt today?", "Damascus is")
+
+### Load your API Key
+os.environ["OPENAI_API_KEY"] = st.secrets["OpenAIkey"]
+
+### OpenAI stuff
+client = OpenAI()
+response = client.chat.completions.create(
+  model="gpt-4o-mini",
+  messages=[
+    {"role": "system", "content": "Complete the following prefix"},
+    {"role": "user", "content": prompt}
+  ],
 )
+
+### Display
+st.write(
+    response.choices[0].message.content
+)
+
+
