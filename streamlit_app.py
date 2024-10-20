@@ -1,6 +1,7 @@
 import streamlit as st
 from openai import OpenAI
 import os
+from transformers import pipeline
 
 ### Load your API Key
 my_secret_key = st.secrets['MyOpenAIKey']
