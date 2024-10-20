@@ -18,7 +18,7 @@ prompt = st.text_input("What is your prompt today?", "Damascus is")
 ### OpenAI stuff
 client = OpenAI()
 response = client.chat.completions.create(
-  model="gpt-4o-mini",
+  model="gpt2",
   messages=[
     {"role": "system", "content": "Complete the following prefix"},
     {"role": "user", "content": prompt}
