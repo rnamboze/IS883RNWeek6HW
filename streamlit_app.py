@@ -15,9 +15,6 @@ st.title("🤓My Amazing GPT2 App🤓")
 
 prompt = st.text_input("What is your prompt today?", "Damascus is")
 
-### Load your API Key
-os.environ["OPENAI_API_KEY"] = st.secrets["OpenAIkey"]
-
 ### OpenAI stuff
 client = OpenAI()
 response = client.chat.completions.create(
