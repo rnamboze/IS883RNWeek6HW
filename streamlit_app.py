@@ -16,20 +16,6 @@ generator = pipeline('text-generation', model='gpt2')
 set_seed(42)
 generator("Hello, I'm a language model,", max_length=30, num_return_sequences=5)
 
-### OpenAI stuff
-client = OpenAI()
-response = client.chat.completions.create(
-  model="gpt2",
-  messages=[
-    {"role": "system", "content": "Complete the following prefix"},
-    {"role": "user", "content": prompt}
-  ],
-)
-
-### Display
-st.write(
-    response.choices[0].message.content
-)
 
 st.title("🤓My Amazing GPT2 App🤓")
 st.write(
