@@ -10,7 +10,7 @@ set_seed(BUID)
 my_secret_key = st.secrets['MyOpenAIKey']
 os.environ["OPENAI_API_KEY"] = my_secret_key
 
-prompt = st.text_input("How may I help you today?", "Damascus is")
+prompt = st.text_input("How may I help you today?")
 
 generator = pipeline('text-generation', model='gpt2')
 set_seed(42)
