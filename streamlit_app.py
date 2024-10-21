@@ -12,7 +12,7 @@ tokenizer = AutoTokenizer.from_pretrained("gpt2")
 model = AutoModelForCausalLM.from_pretrained("gpt2")
 
 # Title of the app
-st.title("My Super Awesome GPT-2 Deployment!")
+st.title("😎Explore My GPT2 Helper🤓")
 
 # Instructions
 st.subheader("Enter _what NOUN is on your mind_ followed by an auxilliary verb such as _is, was, has,_ etc. and see what happens! :sunglasses:", divider=True)
