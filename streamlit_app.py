@@ -15,7 +15,7 @@ model = AutoModelForCausalLM.from_pretrained("gpt2")
 st.title("😎Explore My GPT2 Helper🤓")
 
 # Instructions
-st.subheader("Enter _what NOUN is on your mind_ followed by an auxilliary verb such as _is, was, has,_ etc. and see what happens! :sunglasses:", divider=True)
+st.subheader("Enter _a NOUN that is on your mind_ followed by an auxilliary verb such as _is, was, has,_ etc. and see what happens! :sunglasses:", divider=True)
 st.caption("The example _Coffee is_ has been provided below")
 
 # Field for the user's prompt
